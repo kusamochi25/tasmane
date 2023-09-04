@@ -1,0 +1,10 @@
+@charset "UTF-8";
+.title {
+	margin-right: auto;
+	margin-left: auto;
+	height: 250px;
+	padding: 20px;
+	font-size: 36px;
+	color:black;
+	background-color: darksalmon;
+}
