@@ -8,11 +8,33 @@ body{
 	background-color: skyblue;
 }
 
+td {
+	text-align: center;
+}
+
 .targetTable {
+	margin-right: 250px;
+	margin-left: 250px;
 	border-collapse: collapse;
 	background-color: orange;
 	table-layout: fixed; /* テーブルの幅を固定する */
-    width: 800px; /* デフォルト幅を設定 */
+    width: 1000px; /* デフォルト幅を設定 */
+}
+
+.tttask {
+	width: 31%;
+}
+
+.ttexp {
+	width: 50%;
+}
+
+.ttdate {
+	width: 10%;
+}
+
+.ttsubmt {
+	width: 9%;
 }
 
 .headW {
@@ -26,7 +48,7 @@ body{
 	margin-left: 250px;
 	padding-top: 20px;
 	padding-bottom: 20px;
-
+	width: 1000px;
 	background-color:orange;
 }
 
@@ -37,6 +59,7 @@ body{
 	padding-top: 20px;
 	padding-bottom: 20px;
 	line-height: 80%;
+	width: 1000px;
 	background-color:orange;
 }
 

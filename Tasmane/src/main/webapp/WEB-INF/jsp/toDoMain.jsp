@@ -15,7 +15,7 @@
 
 <div class="header">
 <h1 class="headW">タスマネくん</h1>
-<h5>ver. 0.1.1</h5>
+<h5>ver. 1.0.0</h5>
 </div>
 
 <div class ="register">
@@ -35,7 +35,7 @@
 </div>
 
 <div>
-<table border="1" class="targetTable" width="800">
+<table border="1" class="targetTable" width="1000">
 		<tr>
 		<td class="tttask">タスク名</td>
 		<td class="ttexp">内容記述・管理</td>
