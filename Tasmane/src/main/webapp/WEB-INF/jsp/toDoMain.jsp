@@ -9,35 +9,38 @@
 <head>
 <meta charset="UTF-8">
 <title>タスマネくん</title>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/head.css">
+<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/tasmane.css">
 </head>
 <body>
 
-<p>
-<h1>タスマネくん</h1>
-<h6>ver. 0.0.1</h6>
-</p>
+<div class="header">
+<h1 class="headW">タスマネくん</h1>
+<h5>ver. 0.1.1</h5>
+</div>
 
-<form action="/Tasmane/ToDoMain" method="post">
-タスク名: <input type="text" name="task">
-<input type="submit" value="登録">
-<br>
-<h4>最大100文字まで登録できます。</h4>
-<br>
-内容: <input type="text" name="exp">
-<h4>最大255文字まで登録できます。</h4>
-</form> 
+<div class ="register">
+	<form action="/Tasmane/ToDoMain" method="post">
+	タスク名: <input class="taskBar" type="text" name="task">
+	<input type="submit" value="登録">
+	<h5>最大100文字まで登録できます。</h5>
+	内容: <input class="infoBar" type="text" name="exp">
+	<h5>最大255文字まで登録できます。</h5>
+	</form> 
+</div>
 
+<div class="warng">
  <c:if test="${not empty errorMsg}">
 	<p>${errorMsg}</p>
 </c:if>
+</div>
 
-<table border="1" id="targetTable">
+<div>
+<table border="1" class="targetTable" width="800">
 		<tr>
-		<td>タスク名</td>
-		<td>内容記述・管理</td>
-		<td>日付</td>
-		<td>完了ボタン</td>
+		<td class="tttask">タスク名</td>
+		<td class="ttexp">内容記述・管理</td>
+		<td class="ttdate">日付</td>
+		<td class="ttsubmt">完了ボタン</td>
 		</tr>
 	<%
 	List<String> tasks = (List<String>)request.getAttribute("taskL");
@@ -76,9 +79,9 @@
 			<%}
 			} %>
 		</td>
-		
 	</tr>
 	<%}%>
 </table>
+</div>
 </body>
 </html>

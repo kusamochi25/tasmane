@@ -1,0 +1,53 @@
+@charset "UTF-8";
+h5 {
+	text-align: right;
+	margin-right: 20px;
+}
+
+body{
+	background-color: skyblue;
+}
+
+.targetTable {
+	border-collapse: collapse;
+	background-color: orange;
+	table-layout: fixed; /* テーブルの幅を固定する */
+    width: 800px; /* デフォルト幅を設定 */
+}
+
+.headW {
+	text-align: center
+}
+
+.header {
+	margin-top: 40px;
+	margin-bottom: 20px;
+	margin-right: 250px;
+	margin-left: 250px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	background-color:orange;
+}
+
+.register {
+	text-align: center;
+	margin-right: 250px;
+	margin-left: 250px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	line-height: 80%;
+	background-color:orange;
+}
+
+.taskBar{
+	width: 60%;
+}
+
+.infoBar {
+	width: 60%;
+}
+
+.warng {
+	text-align: center;
+}
