@@ -24,7 +24,7 @@ public class ToDoDAO{
 		
 		//db接続
 		try( Connection con = DriverManager.getConnection(JDBC_URL, USER, PASS)){
-			String sql = "SELECT task_id, task, exp, registered_date, mark FROM tasmane ORDER BY mark";
+			String sql = "SELECT task_id, task, exp, registered_date, mark FROM tasmane ORDER BY registered_date";
 			Statement sta = con.createStatement();
 			ResultSet rs = sta.executeQuery(sql);
 			
@@ -45,6 +45,29 @@ public class ToDoDAO{
 			return null;
 		}
 		return todoList;
+	}
+	
+	public ToDo find(int pkNum) {
+		
+		try ( Connection con = DriverManager.getConnection(JDBC_URL, USER, PASS)) {
+			String sql = "SELECT task_id, task, exp, registered_date, mark FROM tasmane WHERE task_id = ?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, pkNum);
+			
+			ResultSet rs = ps.executeQuery();
+			rs.next();
+			ToDo td = new ToDo();
+			td.setTask_id(rs.getInt("task_id"));
+			td.setTask(rs.getString("task"));
+			td.setExp(rs.getString("exp"));
+			td.setRegistered_date(rs.getDate("registered_date"));
+			td.setMark(rs.getInt("mark"));
+			
+			return td;
+		} catch (SQLException e){
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 	public boolean create(ToDo td) {
@@ -71,6 +94,46 @@ public class ToDoDAO{
 			String sql = "DELETE FROM tasmane WHERE task_id = ?";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, gotId);
+			ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void update(int id, String task, String exp, Date d) {
+		try (Connection con = DriverManager.getConnection(JDBC_URL, USER, PASS)) {
+			StringBuilder sql = new StringBuilder( "UPDATE tasmane SET " );
+
+			if (task != null) {
+				sql.append("task = '");
+				sql.append(task);
+				
+				sql.append("' ");
+				if (exp != null || d != null)
+				sql.append(",");
+			}
+			
+			if (exp != null) {
+				sql.append("exp = '");
+				sql.append(exp);
+				sql.append("' ");
+				if (d != null)
+				sql.append(",");
+			}
+			
+			if (d != null) {
+				sql.append("registered_date = '");
+				sql.append(d);
+				sql.append("' ");
+			}
+			
+			sql.append("WHERE task_id = ?");
+			
+			String stsql = sql.toString();
+			PreparedStatement ps = con.prepareStatement(stsql);
+			ps.setInt(1, id);
+			
 			ps.executeUpdate();
 			
 		} catch (SQLException e) {

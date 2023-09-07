@@ -22,11 +22,11 @@ td {
 }
 
 .tttask {
-	width: 31%;
+	width: 21%;
 }
 
 .ttexp {
-	width: 50%;
+	width: 60%;
 }
 
 .ttdate {
@@ -35,6 +35,10 @@ td {
 
 .ttsubmt {
 	width: 9%;
+}
+
+.edtB {
+	text-align: right;
 }
 
 .headW {

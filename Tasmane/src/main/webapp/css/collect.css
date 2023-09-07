@@ -1,0 +1,30 @@
+@charset "UTF-8";
+body {
+	background-color: skyblue;
+}
+
+.titleScene {
+	margin-top: 40px;
+	margin-bottom: 20px;
+	margin-right: 250px;
+	margin-left: 250px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 1000px;
+	text-align: center;
+	background-color: orange;
+}
+
+.task, .exp, .date{
+	margin-right: 250px;
+	margin-left: 250px;
+	padding-left: 100px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 900px;
+	background-color: orange;
+}
+
+.btn {
+	text-align: center;
+}

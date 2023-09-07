@@ -15,15 +15,15 @@
 
 <div class="header">
 <h1 class="headW">タスマネくん</h1>
-<h5>ver. 1.0.0</h5>
+<h5>ver. 1.0.2</h5>
 </div>
 
 <div class ="register">
 	<form action="/Tasmane/ToDoMain" method="post">
-	タスク名: <input class="taskBar" type="text" name="task">
+	<input class="taskBar" type="text" name="task" maxlength="100" placeholder="タスク名をここに記述">
 	<input type="submit" value="登録">
 	<h5>最大100文字まで登録できます。</h5>
-	内容: <input class="infoBar" type="text" name="exp">
+	<input class="infoBar" type="text" name="exp" maxlength="255" placeholder="内容をここに記述">
 	<h5>最大255文字まで登録できます。</h5>
 	</form> 
 </div>
@@ -61,6 +61,9 @@
 			<% if (exps != null) {%>
 			<%=exps.get(i) %>
 			<%}%>
+			<form action="Collect" method="post">
+			<button class="edtB" type="submit" name="edt" value="<%=idL.get(i)%>">変更</button>
+			</form>
 		</td>
 		
 		<td>
